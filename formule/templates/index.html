@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <h3 class="bg-success text-center text-uppercase p-3 text-white">Závodníci</h3>
+        {% include "blocks/racer.html" %}
+    </div>
+    <div class="col-md-3">
+        <h3 class="bg-success text-center text-uppercase p-3 text-white">Seznam stájí</h3>
+        {% include "blocks/teams.html" %}
+    </div>
+    <div class="col-md-2">
+        <h3 class="bg-success text-center text-uppercase p-3 text-white">Národnosti</h3>
+        {% include "blocks/nation.html" %}
+    </div>
+    <div class="col-md-2">
+        <h3 class="bg-success text-center text-uppercase p-3 text-white">Závody</h3>
+        {% include "blocks/grandPrix.html" %}
+    </div>
+    <div class="col-md-2">
+        <h3 class="bg-success text-center text-uppercase p-3 text-white">Sezóny</h3>
+        {% include "blocks/sesion.html" %}
+    </div>
+</div>
+{% endblock %}

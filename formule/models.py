@@ -1,8 +1,19 @@
+from pickle import TRUE
 from django.db import models
+
+def pic_nat(instance, filename):
+    return "pictures/" + str(instance.nationality_name) + filename
+
+def pic_rac(instance, filename):
+    return "pictures/" + str(instance.racer_name) + filename
+
+def pic_team(instance, filename):
+    return "pictures/" + str(instance.team_name) + filename
 
 class Nationality(models.Model):
     nationality_name = models.CharField(max_length=20, verbose_name='Name')
     nationality_shortcut = models.CharField(max_length=3, verbose_name='Shortcut')
+    photo = models.ImageField(upload_to = pic_nat, blank=True, null=True, verbose_name="Nationality flag")
 
     class Meta:
         ordering = ['nationality_name']
@@ -13,6 +24,7 @@ class Nationality(models.Model):
 class Team(models.Model):
     team_name = models.CharField(max_length=20, verbose_name='Name')
     nationality_name = models.ForeignKey(Nationality, on_delete=models.CASCADE, verbose_name="Nationality")
+    photo = models.ImageField(upload_to = pic_team, blank=True, null=True, verbose_name="Team badge")
 
     class Meta:
         ordering = ['team_name']
@@ -28,6 +40,7 @@ class Racer(models.Model):
     nationality_shortcut = models.ForeignKey(Nationality, on_delete=models.CASCADE, verbose_name="Nationality shortcut")
     team_name = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name="Team name")
     racer_born = models.DateField(verbose_name='Born date')
+    photo = models.ImageField(upload_to = pic_rac, blank=True, null=True, verbose_name="Photo")
 
     class Meta:
         ordering = ['racer_name']

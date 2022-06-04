@@ -1,0 +1,10 @@
+<ul>
+    {% for grandPrix in grandPrix %}
+    <div class="row">
+        <div>
+            <hr>{{ grandPrix.track_name }} - {{ grandPrix.nationality_name.nationality_shortcut }}</hr>
+        </div>        
+    </div>
+        
+    {% endfor %}
+</ul>

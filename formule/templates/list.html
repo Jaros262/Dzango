@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="row mb-3">
+    <div class="col-sm-12 bg-success">
+        <h2 class="display-4 text-center text-light">Závodníci</h2>
+    </div>
+</div>
+<div class="row">
+{%for racer in racer%}
+
+    <div class="col-lg-2 mb-3">
+        <div style="background-color: lightgray;">
+            <div class="bg-secondary text-light p-2 mb-3">
+                
+                <a href="{% url 'racer_detail' racer.pk %}" style="color:black;">{{racer.racer_name}}</a>
+                
+                            
+            </div>
+                <div class="col-md-12">
+                    {%if racer.photo%}
+                    <img src="{{ racer.photo.url }}" class="img-fluid" alt="Závodník">
+                    {%endif%}
+                </div>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<ul>
+    {% for team in team %}
+    <div class="row">
+        <div>
+            <hr>{{ team.team_name }}</hr>
+        </div>
+        <div class="col-md-2 mt-4">
+            <img src="{{ team.photo.url }}" class="img-fluid" alt="Logo">
+        </div>
+        
+    </div>
+        
+    {% endfor %}
+</ul>

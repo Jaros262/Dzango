@@ -1,0 +1,14 @@
+<ul>
+    {% for nation in nation %}
+    <div class="row">
+        <div>
+            <hr><a href="{% url 'nation_detail' nation.pk %}"  style="color:black;">{{ nation.nationality_name }}</a></hr>
+        </div>
+        <div class="col-md-3 mt-4">
+            <img src="{{ nation.photo.url }}" class="img-fluid" alt="Logo">
+        </div>
+        
+    </div>
+        
+    {% endfor %}
+</ul>

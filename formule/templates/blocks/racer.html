@@ -1,0 +1,14 @@
+<ul>
+    {% for racer in racer %}
+    <div class="row">
+        <div>
+            <hr><a href="{% url 'racer_detail' racer.pk %}" style="color:black;">{{ racer.racer_name }} {{ racer.racer_surname }}</a></hr>
+        </div>
+        <div class="col-md-3 mt-4">
+            <img src="{{ racer.photo.url }}" class="img-fluid" alt="Logo">
+        </div>
+        
+    </div>
+        
+    {% endfor %}
+</ul>

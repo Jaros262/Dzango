@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Detail filmu{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">informace o zemi</h2>
+    </div>
+</div>
+<div class="row mt-5 mb-3">
+    <div class="col-lg-6 mb-3">
+        <h2 class="display-4 mb-3">{{ nation_detail.nationality_name }} - {{ nation_detail.nationality_shortcut}}</h2>
+        <div class="bg-secondary text-light p-2 mb-3">
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+                {% if nation_detail.photo %}
+                 <a href="{{ nation_detail.photo.url }}" data-gallery="gallery">
+                    <img src="{{ nation_detail.photo.url }}" class="img-fluid" alt="Plakát k filmu">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+h2 {
+    color: red !important;
+}
+
+header {
+    background-image: url('../img/finish_line.png');
+    background-repeat: no-repeat;
+    background-position: 50px 10px;
+    background-size: 175px 175px;
+}
